@@ -1,7 +1,9 @@
 package cmd
 
 import (
-	"fmt"
+	"hogwarts/api"
+
+	"github.com/fatih/color"
 
 	"github.com/spf13/cobra"
 )
@@ -16,8 +18,11 @@ var spellRandomCmd = &cobra.Command{
 	Run: getRandomSpell,
 }
 
+// Format wanted Expelliarmus: Disarms an opponent.
 func getRandomSpell(cmd *cobra.Command, args []string) {
 	// Code that is executed when the command is ran
-	fmt.Println("Name: Accio")
-	fmt.Println("Description: Moves things towards you")
+	spellName, spellDesc := api.GetRandomSpell()
+
+	boldWhite := color.New(color.FgWhite, color.Bold)
+	boldWhite.Printf("%s: %s", spellName, spellDesc)
 }
