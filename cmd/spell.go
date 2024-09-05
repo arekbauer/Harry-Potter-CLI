@@ -9,8 +9,8 @@ var spellCmd = &cobra.Command{
 
 For example: 
 	
-potter spell random 
-potter spell lookup`,
+hogwarts spell random 
+hogwarts spell lookup`,
 }
 
 func init() {

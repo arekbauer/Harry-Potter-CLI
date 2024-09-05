@@ -26,7 +26,6 @@ Flags:
 
 - `--house string`: filter by house
 - `--gender string`: filter by gender
-- `--age int`: filter by age
 - `--patronus string` : filter by patronus
 - `--student bool` : filter by students
 - `--alive bool` : filter by life status

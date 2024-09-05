@@ -9,7 +9,7 @@ import (
 	"golang.org/x/exp/rand"
 )
 
-const cacheFile = "cache/spells.json"
+const cacheSpellFile = "cache/spells.json"
 
 type Spell struct {
 	Name        string `json:"name"`
@@ -21,15 +21,8 @@ func getSpells() {
 	// Call the request
 	responseBody, _ := getResponse("spells")
 
-	// Create a instance of our Spell struct
-	var spells []Spell
-	err := json.Unmarshal(responseBody, &spells) //convert responseBody into the Spell format
-	if err != nil {
-		panic(err)
-	}
-
 	// Write data to json file
-	err = os.WriteFile(cacheFile, responseBody, 0644)
+	err := os.WriteFile(cacheSpellFile, responseBody, 0644)
 	if err != nil {
 		panic(err)
 	}
@@ -39,12 +32,12 @@ func getSpells() {
 // Function that checks cached files, creates cached file, and returns the spell list
 func readSpells() []Spell {
 	// Check if cache spells exists
-	if !fileExists(cacheFile) {
+	if !fileExists(cacheSpellFile) {
 		getSpells()
 	}
 
 	// Read json file contents
-	file, err := os.ReadFile(cacheFile)
+	file, err := os.ReadFile(cacheSpellFile)
 	if err != nil {
 		panic(err)
 	}

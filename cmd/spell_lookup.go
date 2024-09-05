@@ -13,7 +13,7 @@ var spellLookupCmd = &cobra.Command{
 	Long: `Get info of a specific spell from the Wizarding World.
 	Using: 
 	
-	potter spell lookup --name Accio`,
+	hogwarts spell lookup --name Accio`,
 	Run: getLookupSpell,
 }
 
