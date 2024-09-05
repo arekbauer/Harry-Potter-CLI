@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"os"
+	"strings"
 	"time"
 
 	"golang.org/x/exp/rand"
@@ -71,6 +72,28 @@ func GetRandomSpell() (string, string) {
 	return spells[rndNum].Name, spells[rndNum].Description
 }
 
-func LookupSpell() {
+// Function that returns a certain spell and description based on index
+func GetSpell(index int) (string, string) {
+	// Grab the whole spell list
+	spells := readSpells()
 
+	return spells[index].Name, spells[index].Description
+}
+
+// Function that returns a spell index, if it exists, and 0 if not
+func LookupSpell(search string) int {
+	// Grab the whole spell list
+	spells := readSpells()
+	numOfSpells := len(spells)
+
+	// Convert search string to lowercase for case-insensitive matching
+	search = strings.ToLower(search)
+
+	//Loop through the spells list until we find a match
+	for i := 0; i < numOfSpells; i++ {
+		if strings.ToLower(spells[i].Name) == search {
+			return i
+		}
+	}
+	return 0
 }
