@@ -32,7 +32,7 @@ func getLookupSpell(cmd *cobra.Command, args []string) {
 	spellIndex := api.LookupSpell(name)
 
 	// If spell does not exist, print red err msg
-	if spellIndex == 0 {
+	if spellIndex <= -1 {
 		color.New(color.FgRed, color.Bold).Println("A spell with that name does not exist!")
 	} else {
 		spellName, spellDesc := api.GetSpell(spellIndex)

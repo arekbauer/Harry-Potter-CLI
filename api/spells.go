@@ -88,5 +88,5 @@ func LookupSpell(search string) int {
 			return i
 		}
 	}
-	return 0
+	return -1
 }

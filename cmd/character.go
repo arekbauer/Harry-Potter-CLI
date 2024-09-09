@@ -82,4 +82,5 @@ func characterPrinter(character api.Character) {
 func init() {
 	rootCmd.AddCommand(characterCmd)
 	characterCmd.AddCommand(characterRandomCmd)
+	characterCmd.AddCommand(charLookupCmd)
 }
