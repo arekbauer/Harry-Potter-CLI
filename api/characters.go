@@ -3,7 +3,6 @@ package api
 import (
 	"encoding/json"
 	"os"
-	"strconv"
 	"strings"
 	"time"
 
@@ -17,7 +16,6 @@ type Character struct {
 	Gender   string `json:"gender"`
 	House    string `json:"house"`
 	Patronus string `json:"patronus"`
-	Student  bool   `json:"hogwartsStudent"`
 	Alive    bool   `json:"alive"`
 }
 
@@ -96,14 +94,8 @@ func LookupCharacter(search string) int {
 }
 
 // Function that returns a list of all characters that fit the input parameters
-func ListCharacters(house string, gender string, patronus string, student string, alive string) []int {
+func ListCharacters(house string, gender string, patronus string, alive bool) []int {
 	var listOfValidChars []int
-
-	var studentNew bool
-	var aliveNew bool
-	// Turn student and alive back into bools
-	studentNew, _ = strconv.ParseBool(student)
-	aliveNew, _ = strconv.ParseBool(alive)
 
 	// Grab the whole characters list
 	characters := readCharacters()
@@ -112,8 +104,7 @@ func ListCharacters(house string, gender string, patronus string, student string
 		if (house == "" || characters[i].House == house) &&
 			(gender == "" || characters[i].Gender == gender) &&
 			(patronus == "" || characters[i].Patronus == patronus) &&
-			(!studentNew || characters[i].Student == studentNew) &&
-			(!aliveNew || characters[i].Alive == aliveNew) {
+			(characters[i].Alive == alive) {
 			listOfValidChars = append(listOfValidChars, i)
 		}
 	}

@@ -62,14 +62,6 @@ func characterPrinter(character api.Character) {
 		defaultText.Printf("%s\n", cases.Title(language.English).String(character.Patronus))
 	}
 
-	// Print hogwarts student
-	fields.Printf("Hogwarts Status: ")
-	if character.Student {
-		trueText.Println("Student")
-	} else {
-		falseText.Println("Non-Student")
-	}
-
 	// Print alive status
 	fields.Printf("Status: ")
 	if character.Alive {
