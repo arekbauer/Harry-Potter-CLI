@@ -1,10 +1,6 @@
-# Harry Potter CLI App
+# Harry Potter CLI App  
 
-## Requirements 
-- Random spell generator
-- Character lookup 
-    - Can search via name -> return info 
-    - Can give list of characters based on criteria e.g. house, gender, age etc
+A Harry Potter CLI tool that knows all spells and characters of the Wizarding World. 
 
 
 ## CLI Examples 

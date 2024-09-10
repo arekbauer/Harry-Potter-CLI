@@ -9,7 +9,7 @@ import (
 	"golang.org/x/exp/rand"
 )
 
-const cacheCharFile = "cache/character.json"
+const cacheCharFile = "cache/character.json" // CHANGE TO ABSOLUTE
 
 type Character struct {
 	Name     string `json:"name"`

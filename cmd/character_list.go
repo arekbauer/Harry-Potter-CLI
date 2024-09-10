@@ -12,9 +12,9 @@ var charListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Get info on specific Harry Potter characters",
 	Long: `Get info of specific characters from the Wizarding World.
-	Using: 
+Using: 
 	
-	hogwarts character list --house Ravenclaw`,
+hogwarts character list --house Ravenclaw`,
 	Run: getListChar,
 }
 

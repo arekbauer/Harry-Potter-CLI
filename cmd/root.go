@@ -12,11 +12,10 @@ import (
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "hogwarts",
-	Short: "A CLU tool for interacting with the Wizarding World",
+	Short: "A CLI tool for interacting with the Wizarding World",
 	Long: `A command-line interface to interact with various aspects of the Wizarding World. 
 	
-Use subcommands to perform different actions. 
-For example:`,
+Use subcommands to perform different actions.`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

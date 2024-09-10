@@ -9,7 +9,7 @@ import (
 	"golang.org/x/exp/rand"
 )
 
-const cacheSpellFile = "cache/spells.json"
+const cacheSpellFile = "cache/spells.json" // CHANGE TO ABSOLUTE
 
 type Spell struct {
 	Name        string `json:"name"`

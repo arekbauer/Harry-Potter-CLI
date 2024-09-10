@@ -10,9 +10,9 @@ var characterRandomCmd = &cobra.Command{
 	Use:   "random",
 	Short: "Get a random Harry Potter character",
 	Long: `Get a random character from the Wizarding World.
-	Using: 
+Using: 
 	
-	hogwarts character random`,
+hogwarts character random`,
 	Run: getRandomChar,
 }
 

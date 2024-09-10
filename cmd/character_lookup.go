@@ -11,9 +11,9 @@ var charLookupCmd = &cobra.Command{
 	Use:   "lookup",
 	Short: "Get info on a specific Harry Potter character",
 	Long: `Get info of a specific character from the Wizarding World.
-	Using: 
+Using: 
 	
-	hogwarts character lookup --name Harry Potter`,
+hogwarts character lookup --name Harry Potter`,
 	Run: getLookupChar,
 }
 

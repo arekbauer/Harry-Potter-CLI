@@ -18,7 +18,7 @@ var characterCmd = &cobra.Command{
 For example: 
 	
 hogwarts character random 
-hogwarts character lookup --name
+hogwarts character lookup --name "Harry Potter"
 howarts character list --house Ravenclaw --gender male`,
 }
 
