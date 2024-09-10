@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -81,16 +82,41 @@ func GetCharacter(index int) Character {
 func LookupCharacter(search string) int {
 	// Grab the whole characters list
 	characters := readCharacters()
-	numOfChars := len(characters)
 
 	// Convert search string to lowercase for case-insensitive matching
 	search = strings.ToLower(search)
 
 	//Loop through the characters list until we find a match
-	for i := 0; i < numOfChars; i++ {
+	for i := 0; i < len(characters); i++ {
 		if strings.ToLower(characters[i].Name) == search {
 			return i
 		}
 	}
 	return -1
+}
+
+// Function that returns a list of all characters that fit the input parameters
+func ListCharacters(house string, gender string, patronus string, student string, alive string) []int {
+	var listOfValidChars []int
+
+	var studentNew bool
+	var aliveNew bool
+	// Turn student and alive back into bools
+	studentNew, _ = strconv.ParseBool(student)
+	aliveNew, _ = strconv.ParseBool(alive)
+
+	// Grab the whole characters list
+	characters := readCharacters()
+
+	for i := 0; i < len(characters); i++ {
+		if (house == "" || characters[i].House == house) &&
+			(gender == "" || characters[i].Gender == gender) &&
+			(patronus == "" || characters[i].Patronus == patronus) &&
+			(!studentNew || characters[i].Student == studentNew) &&
+			(!aliveNew || characters[i].Alive == aliveNew) {
+			listOfValidChars = append(listOfValidChars, i)
+		}
+	}
+
+	return listOfValidChars
 }

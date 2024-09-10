@@ -77,13 +77,12 @@ func GetSpell(index int) (string, string) {
 func LookupSpell(search string) int {
 	// Grab the whole spell list
 	spells := readSpells()
-	numOfSpells := len(spells)
 
 	// Convert search string to lowercase for case-insensitive matching
 	search = strings.ToLower(search)
 
 	//Loop through the spells list until we find a match
-	for i := 0; i < numOfSpells; i++ {
+	for i := 0; i < len(spells); i++ {
 		if strings.ToLower(spells[i].Name) == search {
 			return i
 		}

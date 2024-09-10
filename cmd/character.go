@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"hogwarts/api"
 
 	"github.com/fatih/color"
@@ -77,10 +78,12 @@ func characterPrinter(character api.Character) {
 		falseText.Println("Deceased")
 	}
 
+	fmt.Printf("\n")
 }
 
 func init() {
 	rootCmd.AddCommand(characterCmd)
 	characterCmd.AddCommand(characterRandomCmd)
 	characterCmd.AddCommand(charLookupCmd)
+	characterCmd.AddCommand(charListCmd)
 }
