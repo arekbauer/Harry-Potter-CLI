@@ -1,6 +1,6 @@
 # Harry Potter CLI App  
 
-A Harry Potter CLI tool that knows all spells and characters of the Wizarding World. 
+A Harry Potter CLI tool that knows all spells and characters of the Wizarding World.  
 
 
 ## CLI Examples 
@@ -11,6 +11,8 @@ A Harry Potter CLI tool that knows all spells and characters of the Wizarding Wo
 Flags:   
 `random` : return a random spell   
 `lookup --name` : return a spell with the exact name
+
+![Hogwarts Spells examples](images/hogwarts_spells.png)
 
 ### Characters 
 `hogwarts character` : base command
