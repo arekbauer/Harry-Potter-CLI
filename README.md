@@ -12,7 +12,10 @@ Flags:
 `random` : return a random spell   
 `lookup --name` : return a spell with the exact name
 
-![Hogwarts Spells examples](images/hogwarts_spells.png)
+### Examples
+![Hogwarts Spells command examples](images/hogwarts_spells.png)
+
+---
 
 ### Characters 
 `hogwarts character` : base command
@@ -26,3 +29,6 @@ Flags:
 - `--gender string`: filter by gender
 - `--patronus string` : filter by patronus
 - `--alive bool` : filter by life status
+
+### Examples
+![Hogwarts Character command examples](images/hogwarts_characters.png)
