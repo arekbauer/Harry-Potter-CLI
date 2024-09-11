@@ -2,6 +2,24 @@
 
 A Harry Potter CLI tool that knows all spells and characters of the Wizarding World.  
 
+## Installing
+### Docker
+To install and run locally you can use Docker containers.  
+After cloning, use the command:
+
+`docker build -t harry-potter-cli .`
+
+Then you can run each command inside the container e.g. 
+- `docker run harry-potter-cli spell random`
+- `docker run harry-potter-cli character lookup --name "Cho Chang"`
+
+### Alternate 
+After cloning you can simply run the commmands:  
+
+`go build`  
+`go install`
+
+Then you can use the CLI commands as seen below.
 
 ## CLI Examples 
 
