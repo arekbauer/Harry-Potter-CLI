@@ -36,6 +36,6 @@ func getLookupSpell(cmd *cobra.Command, args []string) {
 		color.New(color.FgRed, color.Bold).Println("A spell with that name does not exist!")
 	} else {
 		spellName, spellDesc := api.GetSpell(spellIndex)
-		color.New(color.FgWhite, color.Bold).Printf("%s: %s", spellName, spellDesc)
+		color.New(color.FgWhite, color.Bold).Printf("%s: %s\n", spellName, spellDesc)
 	}
 }

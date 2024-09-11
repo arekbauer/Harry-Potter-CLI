@@ -24,5 +24,5 @@ func getRandomSpell(cmd *cobra.Command, args []string) {
 	spellName, spellDesc := api.GetRandomSpell()
 
 	boldWhite := color.New(color.FgWhite, color.Bold)
-	boldWhite.Printf("%s: %s", spellName, spellDesc)
+	boldWhite.Printf("%s: %s\n", spellName, spellDesc)
 }
